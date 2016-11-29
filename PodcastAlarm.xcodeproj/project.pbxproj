@@ -7,21 +7,128 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		260BDD761DE6A8EB00259B7F /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260BDD751DE6A8EB00259B7F /* AlarmViewController.swift */; };
+		261B5C671DE196AC0010AB67 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261B5C661DE196AC0010AB67 /* Protocols.swift */; };
 		262D302B1DE03780002BFA50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262D302A1DE03780002BFA50 /* AppDelegate.swift */; };
-		262D302D1DE03780002BFA50 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262D302C1DE03780002BFA50 /* ViewController.swift */; };
 		262D30301DE03780002BFA50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 262D302E1DE03780002BFA50 /* Main.storyboard */; };
 		262D30321DE03780002BFA50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 262D30311DE03780002BFA50 /* Assets.xcassets */; };
 		262D30351DE03780002BFA50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 262D30331DE03780002BFA50 /* LaunchScreen.storyboard */; };
+		262D303F1DE072B4002BFA50 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262D303E1DE072B4002BFA50 /* NetworkHelper.swift */; };
+		262D30411DE072C0002BFA50 /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262D30401DE072C0002BFA50 /* RealmHelper.swift */; };
+		262D30431DE0767A002BFA50 /* PlayerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262D30421DE0767A002BFA50 /* PlayerHelper.swift */; };
+		262D30451DE076FB002BFA50 /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262D30441DE076FB002BFA50 /* NotificationHelper.swift */; };
+		2631AEBB1DE2D85A0047C5B9 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2631AEBA1DE2D85A0047C5B9 /* SearchViewController.swift */; };
+		2631AEC01DE2DD1A0047C5B9 /* ObjectMapper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2631AEBC1DE2DD1A0047C5B9 /* ObjectMapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2631AEC21DE2DD1A0047C5B9 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2631AEBD1DE2DD1A0047C5B9 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2631AEC41DE2DD1A0047C5B9 /* SWXMLHash.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2631AEBE1DE2DD1A0047C5B9 /* SWXMLHash.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2631AEC61DE2DD230047C5B9 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2631AEBC1DE2DD1A0047C5B9 /* ObjectMapper.framework */; };
+		2631AEC71DE2DD230047C5B9 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2631AEBD1DE2DD1A0047C5B9 /* RealmSwift.framework */; };
+		2631AEC81DE2DD230047C5B9 /* SWXMLHash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2631AEBE1DE2DD1A0047C5B9 /* SWXMLHash.framework */; };
+		2631AECB1DE2DD720047C5B9 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2631AECA1DE2DD720047C5B9 /* Realm.framework */; };
+		2631AECC1DE2DD720047C5B9 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2631AECA1DE2DD720047C5B9 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2631AECF1DE2E2670047C5B9 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2631AECE1DE2E2670047C5B9 /* SearchTableViewCell.swift */; };
+		2631AED11DE2E8980047C5B9 /* Podcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2631AED01DE2E8980047C5B9 /* Podcast.swift */; };
+		2631AED31DE2EF410047C5B9 /* Haneke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2631AED21DE2EF410047C5B9 /* Haneke.framework */; };
+		2631AED41DE2EF410047C5B9 /* Haneke.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2631AED21DE2EF410047C5B9 /* Haneke.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2631AED61DE2F0B40047C5B9 /* PodcastHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2631AED51DE2F0B40047C5B9 /* PodcastHelper.swift */; };
+		2631AED81DE304AC0047C5B9 /* PodcastDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2631AED71DE304AC0047C5B9 /* PodcastDetail.swift */; };
+		264726601DED3C6E00FE075F /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2647265F1DED3C6E00FE075F /* UserNotifications.framework */; };
+		264726621DED3C6E00FE075F /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 264726611DED3C6E00FE075F /* UserNotificationsUI.framework */; };
+		264726651DED3C6E00FE075F /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264726641DED3C6E00FE075F /* NotificationViewController.swift */; };
+		264726681DED3C6E00FE075F /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 264726661DED3C6E00FE075F /* MainInterface.storyboard */; };
+		2647266C1DED3C6E00FE075F /* PodcastAlarmExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2647265E1DED3C6E00FE075F /* PodcastAlarmExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		26C5C06A1DE456BE00616614 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C5C0691DE456BE00616614 /* Episode.swift */; };
+		26C5C06C1DE45F8700616614 /* EpisodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C5C06B1DE45F8700616614 /* EpisodeTableViewCell.swift */; };
+		26C5C06E1DE462B000616614 /* PodcastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C5C06D1DE462B000616614 /* PodcastViewController.swift */; };
+		26D68E771DE6CB3100045608 /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D68E761DE6CB3100045608 /* Alarm.swift */; };
+		26D68E791DE7E50D00045608 /* SecondaryMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D68E781DE7E50D00045608 /* SecondaryMenuViewController.swift */; };
+		26D68E7B1DE7F0AF00045608 /* DataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D68E7A1DE7F0AF00045608 /* DataHelper.swift */; };
+		26D68E7D1DE975B500045608 /* AlarmListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D68E7C1DE975B500045608 /* AlarmListViewController.swift */; };
+		26D68E7F1DE9766800045608 /* AlarmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D68E7E1DE9766800045608 /* AlarmTableViewCell.swift */; };
+		26D68E821DE99A8200045608 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D68E811DE99A8200045608 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		2647266A1DED3C6E00FE075F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 262D301F1DE03780002BFA50 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2647265D1DED3C6E00FE075F;
+			remoteInfo = PodcastAlarmExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2631AEC51DE2DD1A0047C5B9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2631AECC1DE2DD720047C5B9 /* Realm.framework in Embed Frameworks */,
+				2631AEC21DE2DD1A0047C5B9 /* RealmSwift.framework in Embed Frameworks */,
+				2631AEC01DE2DD1A0047C5B9 /* ObjectMapper.framework in Embed Frameworks */,
+				2631AEC41DE2DD1A0047C5B9 /* SWXMLHash.framework in Embed Frameworks */,
+				2631AED41DE2EF410047C5B9 /* Haneke.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		264726701DED3C6E00FE075F /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				2647266C1DED3C6E00FE075F /* PodcastAlarmExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		260BDD751DE6A8EB00259B7F /* AlarmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlarmViewController.swift; path = ViewControllers/AlarmViewController.swift; sourceTree = "<group>"; };
+		261B5C661DE196AC0010AB67 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Protocols.swift; path = Helpers/Protocols.swift; sourceTree = "<group>"; };
 		262D30271DE03780002BFA50 /* PodcastAlarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PodcastAlarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		262D302A1DE03780002BFA50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		262D302C1DE03780002BFA50 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		262D302F1DE03780002BFA50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		262D30311DE03780002BFA50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		262D30341DE03780002BFA50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		262D30361DE03780002BFA50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		262D303E1DE072B4002BFA50 /* NetworkHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkHelper.swift; path = Helpers/NetworkHelper.swift; sourceTree = "<group>"; };
+		262D30401DE072C0002BFA50 /* RealmHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmHelper.swift; path = Helpers/RealmHelper.swift; sourceTree = "<group>"; };
+		262D30421DE0767A002BFA50 /* PlayerHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerHelper.swift; path = Helpers/PlayerHelper.swift; sourceTree = "<group>"; };
+		262D30441DE076FB002BFA50 /* NotificationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationHelper.swift; path = Helpers/NotificationHelper.swift; sourceTree = "<group>"; };
+		2631AEBA1DE2D85A0047C5B9 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = ViewControllers/SearchViewController.swift; sourceTree = "<group>"; };
+		2631AEBC1DE2DD1A0047C5B9 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = ../Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
+		2631AEBD1DE2DD1A0047C5B9 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = ../Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		2631AEBE1DE2DD1A0047C5B9 /* SWXMLHash.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SWXMLHash.framework; path = ../Carthage/Build/iOS/SWXMLHash.framework; sourceTree = "<group>"; };
+		2631AECA1DE2DD720047C5B9 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = ../Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		2631AECE1DE2E2670047C5B9 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchTableViewCell.swift; path = TableViewCell/SearchTableViewCell.swift; sourceTree = "<group>"; };
+		2631AED01DE2E8980047C5B9 /* Podcast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Podcast.swift; path = Models/Podcast.swift; sourceTree = "<group>"; };
+		2631AED21DE2EF410047C5B9 /* Haneke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Haneke.framework; path = ../Carthage/Build/iOS/Haneke.framework; sourceTree = "<group>"; };
+		2631AED51DE2F0B40047C5B9 /* PodcastHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PodcastHelper.swift; path = Models/PodcastHelper.swift; sourceTree = "<group>"; };
+		2631AED71DE304AC0047C5B9 /* PodcastDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PodcastDetail.swift; path = Models/PodcastDetail.swift; sourceTree = "<group>"; };
+		2647265E1DED3C6E00FE075F /* PodcastAlarmExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PodcastAlarmExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		2647265F1DED3C6E00FE075F /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		264726611DED3C6E00FE075F /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
+		264726641DED3C6E00FE075F /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		264726671DED3C6E00FE075F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		264726691DED3C6E00FE075F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		26C5C0691DE456BE00616614 /* Episode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Episode.swift; path = Models/Episode.swift; sourceTree = "<group>"; };
+		26C5C06B1DE45F8700616614 /* EpisodeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EpisodeTableViewCell.swift; path = TableViewCell/EpisodeTableViewCell.swift; sourceTree = "<group>"; };
+		26C5C06D1DE462B000616614 /* PodcastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PodcastViewController.swift; path = ViewControllers/PodcastViewController.swift; sourceTree = "<group>"; };
+		26D68E761DE6CB3100045608 /* Alarm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alarm.swift; path = Models/Alarm.swift; sourceTree = "<group>"; };
+		26D68E781DE7E50D00045608 /* SecondaryMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SecondaryMenuViewController.swift; path = ViewControllers/SecondaryMenuViewController.swift; sourceTree = "<group>"; };
+		26D68E7A1DE7F0AF00045608 /* DataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataHelper.swift; path = Helpers/DataHelper.swift; sourceTree = "<group>"; };
+		26D68E7C1DE975B500045608 /* AlarmListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlarmListViewController.swift; path = ViewControllers/AlarmListViewController.swift; sourceTree = "<group>"; };
+		26D68E7E1DE9766800045608 /* AlarmTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlarmTableViewCell.swift; path = TableViewCell/AlarmTableViewCell.swift; sourceTree = "<group>"; };
+		26D68E811DE99A8200045608 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Extensions/Extensions.swift; sourceTree = "<group>"; };
+		26E9E3F01DE2D17300640965 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
+		26E9E3F11DE2D17300640965 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		26E9E3F21DE2D17300640965 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		26E9E3F31DE2D17300640965 /* SWXMLHash.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SWXMLHash.framework; path = Carthage/Build/iOS/SWXMLHash.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +136,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2631AECB1DE2DD720047C5B9 /* Realm.framework in Frameworks */,
+				2631AEC61DE2DD230047C5B9 /* ObjectMapper.framework in Frameworks */,
+				2631AEC71DE2DD230047C5B9 /* RealmSwift.framework in Frameworks */,
+				2631AEC81DE2DD230047C5B9 /* SWXMLHash.framework in Frameworks */,
+				2631AED31DE2EF410047C5B9 /* Haneke.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2647265B1DED3C6E00FE075F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				264726621DED3C6E00FE075F /* UserNotificationsUI.framework in Frameworks */,
+				264726601DED3C6E00FE075F /* UserNotifications.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -39,7 +160,9 @@
 			isa = PBXGroup;
 			children = (
 				262D30291DE03780002BFA50 /* PodcastAlarm */,
+				264726631DED3C6E00FE075F /* PodcastAlarmExtension */,
 				262D30281DE03780002BFA50 /* Products */,
+				26E9E3EF1DE2D17100640965 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -47,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				262D30271DE03780002BFA50 /* PodcastAlarm.app */,
+				2647265E1DED3C6E00FE075F /* PodcastAlarmExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -54,14 +178,109 @@
 		262D30291DE03780002BFA50 /* PodcastAlarm */ = {
 			isa = PBXGroup;
 			children = (
+				2631AEC91DE2DD270047C5B9 /* Frameworks */,
+				26D68E801DE99A7100045608 /* Extensions */,
+				2631AECD1DE2E24F0047C5B9 /* TableViewCell */,
+				2631AEB91DE2D82D0047C5B9 /* ViewControllers */,
+				262D303D1DE07289002BFA50 /* Helpers */,
+				262D303C1DE03B14002BFA50 /* Models */,
 				262D302A1DE03780002BFA50 /* AppDelegate.swift */,
-				262D302C1DE03780002BFA50 /* ViewController.swift */,
 				262D302E1DE03780002BFA50 /* Main.storyboard */,
 				262D30311DE03780002BFA50 /* Assets.xcassets */,
 				262D30331DE03780002BFA50 /* LaunchScreen.storyboard */,
 				262D30361DE03780002BFA50 /* Info.plist */,
 			);
 			path = PodcastAlarm;
+			sourceTree = "<group>";
+		};
+		262D303C1DE03B14002BFA50 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2631AED01DE2E8980047C5B9 /* Podcast.swift */,
+				2631AED51DE2F0B40047C5B9 /* PodcastHelper.swift */,
+				2631AED71DE304AC0047C5B9 /* PodcastDetail.swift */,
+				26C5C0691DE456BE00616614 /* Episode.swift */,
+				26D68E761DE6CB3100045608 /* Alarm.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		262D303D1DE07289002BFA50 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				262D303E1DE072B4002BFA50 /* NetworkHelper.swift */,
+				262D30401DE072C0002BFA50 /* RealmHelper.swift */,
+				262D30421DE0767A002BFA50 /* PlayerHelper.swift */,
+				262D30441DE076FB002BFA50 /* NotificationHelper.swift */,
+				261B5C661DE196AC0010AB67 /* Protocols.swift */,
+				26D68E7A1DE7F0AF00045608 /* DataHelper.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		2631AEB91DE2D82D0047C5B9 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				2631AEBA1DE2D85A0047C5B9 /* SearchViewController.swift */,
+				26C5C06D1DE462B000616614 /* PodcastViewController.swift */,
+				260BDD751DE6A8EB00259B7F /* AlarmViewController.swift */,
+				26D68E781DE7E50D00045608 /* SecondaryMenuViewController.swift */,
+				26D68E7C1DE975B500045608 /* AlarmListViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		2631AEC91DE2DD270047C5B9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2631AED21DE2EF410047C5B9 /* Haneke.framework */,
+				2631AECA1DE2DD720047C5B9 /* Realm.framework */,
+				2631AEBC1DE2DD1A0047C5B9 /* ObjectMapper.framework */,
+				2631AEBD1DE2DD1A0047C5B9 /* RealmSwift.framework */,
+				2631AEBE1DE2DD1A0047C5B9 /* SWXMLHash.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2631AECD1DE2E24F0047C5B9 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				2631AECE1DE2E2670047C5B9 /* SearchTableViewCell.swift */,
+				26C5C06B1DE45F8700616614 /* EpisodeTableViewCell.swift */,
+				26D68E7E1DE9766800045608 /* AlarmTableViewCell.swift */,
+			);
+			name = TableViewCell;
+			sourceTree = "<group>";
+		};
+		264726631DED3C6E00FE075F /* PodcastAlarmExtension */ = {
+			isa = PBXGroup;
+			children = (
+				264726641DED3C6E00FE075F /* NotificationViewController.swift */,
+				264726661DED3C6E00FE075F /* MainInterface.storyboard */,
+				264726691DED3C6E00FE075F /* Info.plist */,
+			);
+			path = PodcastAlarmExtension;
+			sourceTree = "<group>";
+		};
+		26D68E801DE99A7100045608 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				26D68E811DE99A8200045608 /* Extensions.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		26E9E3EF1DE2D17100640965 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				26E9E3F01DE2D17300640965 /* ObjectMapper.framework */,
+				26E9E3F11DE2D17300640965 /* Realm.framework */,
+				26E9E3F21DE2D17300640965 /* RealmSwift.framework */,
+				26E9E3F31DE2D17300640965 /* SWXMLHash.framework */,
+				2647265F1DED3C6E00FE075F /* UserNotifications.framework */,
+				264726611DED3C6E00FE075F /* UserNotificationsUI.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,15 +293,36 @@
 				262D30231DE03780002BFA50 /* Sources */,
 				262D30241DE03780002BFA50 /* Frameworks */,
 				262D30251DE03780002BFA50 /* Resources */,
+				26E9E3F81DE2D1BE00640965 /* ShellScript */,
+				2631AEC51DE2DD1A0047C5B9 /* Embed Frameworks */,
+				264726701DED3C6E00FE075F /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				2647266B1DED3C6E00FE075F /* PBXTargetDependency */,
 			);
 			name = PodcastAlarm;
 			productName = PodcastAlarm;
 			productReference = 262D30271DE03780002BFA50 /* PodcastAlarm.app */;
 			productType = "com.apple.product-type.application";
+		};
+		2647265D1DED3C6E00FE075F /* PodcastAlarmExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2647266F1DED3C6E00FE075F /* Build configuration list for PBXNativeTarget "PodcastAlarmExtension" */;
+			buildPhases = (
+				2647265A1DED3C6E00FE075F /* Sources */,
+				2647265B1DED3C6E00FE075F /* Frameworks */,
+				2647265C1DED3C6E00FE075F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PodcastAlarmExtension;
+			productName = PodcastAlarmExtension;
+			productReference = 2647265E1DED3C6E00FE075F /* PodcastAlarmExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -96,6 +336,17 @@
 				TargetAttributes = {
 					262D30261DE03780002BFA50 = {
 						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = W3RCCUG568;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+					2647265D1DED3C6E00FE075F = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = W3RCCUG568;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -114,6 +365,7 @@
 			projectRoot = "";
 			targets = (
 				262D30261DE03780002BFA50 /* PodcastAlarm */,
+				2647265D1DED3C6E00FE075F /* PodcastAlarmExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -129,19 +381,83 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2647265C1DED3C6E00FE075F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				264726681DED3C6E00FE075F /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		26E9E3F81DE2D1BE00640965 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ObjectMapper.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SWXMLHash.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Haneke.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		262D30231DE03780002BFA50 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				262D302D1DE03780002BFA50 /* ViewController.swift in Sources */,
+				2631AECF1DE2E2670047C5B9 /* SearchTableViewCell.swift in Sources */,
+				26C5C06C1DE45F8700616614 /* EpisodeTableViewCell.swift in Sources */,
+				262D30451DE076FB002BFA50 /* NotificationHelper.swift in Sources */,
+				26D68E771DE6CB3100045608 /* Alarm.swift in Sources */,
+				26D68E791DE7E50D00045608 /* SecondaryMenuViewController.swift in Sources */,
+				2631AEBB1DE2D85A0047C5B9 /* SearchViewController.swift in Sources */,
+				2631AED11DE2E8980047C5B9 /* Podcast.swift in Sources */,
+				260BDD761DE6A8EB00259B7F /* AlarmViewController.swift in Sources */,
+				261B5C671DE196AC0010AB67 /* Protocols.swift in Sources */,
+				26D68E7B1DE7F0AF00045608 /* DataHelper.swift in Sources */,
+				262D30411DE072C0002BFA50 /* RealmHelper.swift in Sources */,
+				2631AED61DE2F0B40047C5B9 /* PodcastHelper.swift in Sources */,
+				262D303F1DE072B4002BFA50 /* NetworkHelper.swift in Sources */,
+				26D68E821DE99A8200045608 /* Extensions.swift in Sources */,
+				26C5C06A1DE456BE00616614 /* Episode.swift in Sources */,
 				262D302B1DE03780002BFA50 /* AppDelegate.swift in Sources */,
+				26D68E7F1DE9766800045608 /* AlarmTableViewCell.swift in Sources */,
+				26C5C06E1DE462B000616614 /* PodcastViewController.swift in Sources */,
+				26D68E7D1DE975B500045608 /* AlarmListViewController.swift in Sources */,
+				262D30431DE0767A002BFA50 /* PlayerHelper.swift in Sources */,
+				2631AED81DE304AC0047C5B9 /* PodcastDetail.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2647265A1DED3C6E00FE075F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				264726651DED3C6E00FE075F /* NotificationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2647266B1DED3C6E00FE075F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2647265D1DED3C6E00FE075F /* PodcastAlarmExtension */;
+			targetProxy = 2647266A1DED3C6E00FE075F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		262D302E1DE03780002BFA50 /* Main.storyboard */ = {
@@ -158,6 +474,14 @@
 				262D30341DE03780002BFA50 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		264726661DED3C6E00FE075F /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				264726671DED3C6E00FE075F /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -257,10 +581,19 @@
 		262D303A1DE03780002BFA50 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = W3RCCUG568;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/PodcastAlarm",
+				);
 				INFOPLIST_FILE = PodcastAlarm/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.adriana.PodcastAlarm;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ef.adriana;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -269,11 +602,46 @@
 		262D303B1DE03780002BFA50 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = W3RCCUG568;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/PodcastAlarm",
+				);
 				INFOPLIST_FILE = PodcastAlarm/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.adriana.PodcastAlarm;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ef.adriana;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		2647266D1DED3C6E00FE075F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = W3RCCUG568;
+				INFOPLIST_FILE = PodcastAlarmExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ef.adriana.PodcastAlarmExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		2647266E1DED3C6E00FE075F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = W3RCCUG568;
+				INFOPLIST_FILE = PodcastAlarmExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ef.adriana.PodcastAlarmExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -295,6 +663,15 @@
 			buildConfigurations = (
 				262D303A1DE03780002BFA50 /* Debug */,
 				262D303B1DE03780002BFA50 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2647266F1DED3C6E00FE075F /* Build configuration list for PBXNativeTarget "PodcastAlarmExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2647266D1DED3C6E00FE075F /* Debug */,
+				2647266E1DED3C6E00FE075F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

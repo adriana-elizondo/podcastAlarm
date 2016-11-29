@@ -9,10 +9,20 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>PodcastAlarmExtension.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>262D30261DE03780002BFA50</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2647265D1DED3C6E00FE075F</key>
 		<dict>
 			<key>primary</key>
 			<true/>

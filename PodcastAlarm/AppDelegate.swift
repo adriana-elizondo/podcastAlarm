@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RealmSwift
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +17,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { (granted, error) in
+            if !granted{
+                let alert = UIAlertController.init(title: "", message: "You must allow notifications for the app to work! :)", preferredStyle: .alert)
+                self.window?.rootViewController?.present(alert, animated: true, completion: nil)
+            }else{
+                NotificationHelper.sharedHelper.setNotificationsCategory()
+            }
+        }
         return true
     }
 

@@ -1,0 +1,4 @@
+github "realm/realm-cocoa"
+github "Hearst-DD/ObjectMapper" ~> 2.1
+github "drmohundro/SWXMLHash" ~> 3.0
+github "Haneke/HanekeSwift" "feature/swift-3"

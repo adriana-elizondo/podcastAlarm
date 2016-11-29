@@ -9,25 +9,20 @@
 import Foundation
 import SWXMLHash
 
-class Episode{
-    var title = ""
-    var description = ""
-    var publicationDate = ""
-    var duration = 0
-    var contentUrl = ""
+struct Episode : XMLIndexerDeserializable{
+    var title : String
+    var description : String
+    var publicationDate :String
+    var duration : String?
+    var contentUrl : String
     
-    var xml : SWXMLHash = {
-        return SWXMLHash.config {
-            config in
-            config.shouldProcessLazily = true
-        }
-    }()
-    
-    init(xmlString : String) {
-        let indexer = xml.parse(xmlString)
-        title = indexer["chanel"]["item"]["title"].element?.text ?? ""
-        description = indexer["chanel"]["item"]["description"].element?.text ?? ""
-        publicationDate = indexer["chanel"]["item"]["pubDate"].element?.text ?? ""
-        contentUrl = indexer["chanel"]["item"]["media:content"].element?.text ?? ""
+    static func deserialize(_ node: XMLIndexer) throws -> Episode {
+        return try Episode(
+            title: node["title"].value() ?? "",
+            description: node["description"].value() ?? "No more data available for this episode at this time",
+            publicationDate: node["pubDate"].value() ?? "",
+            duration: node["itunes:duration"].value() ?? "",
+            contentUrl: node["enclosure"].element?.attribute(by: "url")?.text ?? ""
+        )
     }
 }

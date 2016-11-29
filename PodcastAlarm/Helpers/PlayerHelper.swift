@@ -7,3 +7,32 @@
 //
 
 import Foundation
+import UIKit
+import AVFoundation
+import AVKit
+
+class PlayerHelper : NSObject{
+    static let sharedInstance = PlayerHelper()
+    
+    static var sharedHelper: PlayerHelper {
+        get { return sharedInstance }
+    }
+    
+    private var player = AVPlayer()
+    
+    func streamFromUrl(urlString: String, viewController: UIViewController){
+        if let url =  URL.init(string: urlString){
+            player = AVPlayer.init(url: url)
+            
+            let playerViewController = AVPlayerViewController()
+            playerViewController.player = player
+            viewController.present(playerViewController, animated: true) {
+                playerViewController.player!.play()
+            }
+        }
+    }
+    
+    func stopAudio(){
+        player.pause()
+    }
+}
