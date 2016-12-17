@@ -91,7 +91,9 @@ extension PodcastViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let episode = episodes[indexPath.row]
         let playAction = UITableViewRowAction.init(style: .destructive, title: "Play") { (action, indexpath) in
-            PlayerHelper.sharedHelper.streamFromUrl(urlString: episode.contentUrl, viewController: self)
+            if let url = URL.init(string: episode.contentUrl){
+                PlayerHelper.sharedHelper.streamFromUrl(url: url, viewController: self)
+            }
             tableView.endEditing(true)
         }
         

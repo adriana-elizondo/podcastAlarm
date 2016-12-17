@@ -16,11 +16,10 @@ public let defaultParameters = "&entity=podcast"
 public typealias RequestResponse = (Bool, Any?, Error?) -> Void
 
 enum Encoding{
-  case JSON, XML
+    case JSON, XML
 }
 
 class NetworkHelper{
-    
     static func getDataWithUrl(stringUrl: String, encoding: Encoding, completion: @escaping RequestResponse){
         DispatchQueue.main.async {
             UIApplication.shared.isNetworkActivityIndicatorVisible = true
@@ -63,5 +62,5 @@ class NetworkHelper{
             
             }.resume()
     }
-
+    
 }

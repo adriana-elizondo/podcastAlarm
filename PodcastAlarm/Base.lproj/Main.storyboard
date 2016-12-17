@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11760" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ina-x2-Lez">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ina-x2-Lez">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11755"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -30,7 +30,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Td0-oZ-pan" id="Dsf-Ro-K2a">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="69.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="69"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FDN-cG-6a0">
@@ -115,7 +115,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="160"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vrM-fu-KR7" id="sGW-YD-Q4n">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="159.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="159"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Images show destruction of Rohingya villages in Myanmar" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fuj-Zr-pj6">
@@ -152,6 +152,12 @@
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Downloaded" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kzJ-I8-G4f">
+                                                    <rect key="frame" x="299.5" y="5" width="70.5" height="14.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="BnP-zX-em8" firstAttribute="top" secondItem="fuj-Zr-pj6" secondAttribute="bottom" id="0XA-8Q-yPY"/>
@@ -159,6 +165,8 @@
                                                 <constraint firstItem="BkV-rN-iWe" firstAttribute="centerY" secondItem="1gI-aK-2ru" secondAttribute="centerY" id="7aM-0z-qKv"/>
                                                 <constraint firstItem="MKl-ZB-J3o" firstAttribute="top" relation="greaterThanOrEqual" secondItem="BnP-zX-em8" secondAttribute="bottom" constant="10" id="AZq-MJ-VrM"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="BkV-rN-iWe" secondAttribute="trailing" constant="15" id="HwP-y3-lC0"/>
+                                                <constraint firstItem="kzJ-I8-G4f" firstAttribute="top" secondItem="sGW-YD-Q4n" secondAttribute="top" constant="5" id="MgO-ux-pbU"/>
+                                                <constraint firstAttribute="trailing" secondItem="kzJ-I8-G4f" secondAttribute="trailing" constant="5" id="ORj-Yg-OHi"/>
                                                 <constraint firstItem="BnP-zX-em8" firstAttribute="leading" secondItem="sGW-YD-Q4n" secondAttribute="leadingMargin" constant="15" id="U28-TV-uX2"/>
                                                 <constraint firstItem="BkV-rN-iWe" firstAttribute="top" secondItem="BnP-zX-em8" secondAttribute="bottom" constant="5" id="U9n-Yf-1uz"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="BnP-zX-em8" secondAttribute="trailing" constant="15" id="UpN-aB-MTw"/>
@@ -173,6 +181,7 @@
                                         <connections>
                                             <outlet property="duration" destination="1gI-aK-2ru" id="JcI-t2-2lW"/>
                                             <outlet property="episodeDescription" destination="BnP-zX-em8" id="fFZ-Wf-5Wk"/>
+                                            <outlet property="isDownloadedLabel" destination="kzJ-I8-G4f" id="7tM-vm-VJL"/>
                                             <outlet property="publicationDate" destination="BkV-rN-iWe" id="Q04-Ue-eIE"/>
                                             <outlet property="title" destination="fuj-Zr-pj6" id="djR-vN-GfL"/>
                                         </connections>
@@ -248,7 +257,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gZV-ah-fEA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2119" y="117"/>
+            <point key="canvasLocation" x="2117.5999999999999" y="116.49175412293854"/>
         </scene>
         <!--Add Alarm-->
         <scene sceneID="hLF-CE-1Ct">
@@ -279,18 +288,18 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="p3Y-oX-biF" id="MgY-GB-f3u">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Repeat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gqZ-QX-1Wq">
-                                                    <rect key="frame" x="15" y="12" width="54" height="20.5"/>
+                                                    <rect key="frame" x="15" y="11" width="54" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Never" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UI1-xS-hiu">
-                                                    <rect key="frame" x="294.5" y="12" width="45.5" height="20.5"/>
+                                                    <rect key="frame" x="294" y="11" width="46" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -371,6 +380,43 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="downloadCell" rowHeight="81" id="oT2-RO-fiJ" customClass="DownloadEpisodeTableViewCell" customModule="PodcastAlarm" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="72" width="375" height="81"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oT2-RO-fiJ" id="PAC-Gz-Eca">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a very long title to test if 2 lines are enough... or maybe I should add 3... life is so complicated" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="025-e9-7lF">
+                                                    <rect key="frame" x="23" y="15.5" width="253" height="50.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Po1-LI-22p">
+                                                    <rect key="frame" x="291" y="25.5" width="69" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="69" id="8iJ-bu-NWY"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Download"/>
+                                                    <connections>
+                                                        <action selector="downloadEpisode:" destination="oT2-RO-fiJ" eventType="touchUpInside" id="unw-P6-uEM"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Po1-LI-22p" firstAttribute="leading" secondItem="025-e9-7lF" secondAttribute="trailing" constant="15" id="36g-RA-Fvs"/>
+                                                <constraint firstItem="025-e9-7lF" firstAttribute="centerY" secondItem="PAC-Gz-Eca" secondAttribute="centerY" id="9np-gF-vL2"/>
+                                                <constraint firstItem="025-e9-7lF" firstAttribute="leading" secondItem="PAC-Gz-Eca" secondAttribute="leadingMargin" constant="15" id="FML-y8-wVf"/>
+                                                <constraint firstItem="Po1-LI-22p" firstAttribute="centerY" secondItem="PAC-Gz-Eca" secondAttribute="centerY" id="LP6-aI-FgC"/>
+                                                <constraint firstAttribute="trailing" secondItem="Po1-LI-22p" secondAttribute="trailing" constant="15" id="h6M-9C-qel"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="downloadButton" destination="Po1-LI-22p" id="ZVB-AS-oIZ"/>
+                                            <outlet property="episodeName" destination="025-e9-7lF" id="YfZ-Fg-1L9"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

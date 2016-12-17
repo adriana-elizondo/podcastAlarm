@@ -20,17 +20,16 @@ class PlayerHelper : NSObject{
     
     private var player = AVPlayer()
     
-    func streamFromUrl(urlString: String, viewController: UIViewController){
-        if let url =  URL.init(string: urlString){
+    func streamFromUrl(url: URL, viewController: UIViewController){
             player = AVPlayer.init(url: url)
             
             let playerViewController = AVPlayerViewController()
             playerViewController.player = player
             viewController.present(playerViewController, animated: true) {
                 playerViewController.player!.play()
-            }
         }
     }
+    
     
     func stopAudio(){
         player.pause()

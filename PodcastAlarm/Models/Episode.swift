@@ -15,6 +15,7 @@ struct Episode : XMLIndexerDeserializable{
     var publicationDate :String
     var duration : String?
     var contentUrl : String
+    var localPath : String
     
     static func deserialize(_ node: XMLIndexer) throws -> Episode {
         return try Episode(
@@ -22,7 +23,8 @@ struct Episode : XMLIndexerDeserializable{
             description: node["description"].value() ?? "No more data available for this episode at this time",
             publicationDate: node["pubDate"].value() ?? "",
             duration: node["itunes:duration"].value() ?? "",
-            contentUrl: node["enclosure"].element?.attribute(by: "url")?.text ?? ""
+            contentUrl: node["enclosure"].element?.attribute(by: "url")?.text ?? "",
+            localPath : ""
         )
     }
 }

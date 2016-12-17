@@ -11,6 +11,12 @@ import UIKit
 import UserNotifications
 import Haneke
 
+enum ActionType: String {
+    case play = "Play"
+    case snooze = "Snooze"
+    case stop = "Stop"
+}
+
 class NotificationHelper : NSObject{
     static let sharedInstance = NotificationHelper()
     
@@ -43,7 +49,7 @@ class NotificationHelper : NSObject{
                     content.body = alarm.episodeName
                     content.sound = UNNotificationSound.default()
                     content.categoryIdentifier = "notificationExtensionId"
-                    
+                    content.userInfo = ["podcastUrl" : alarm.episodeUrl]
                     // Deliver the notification in the alarm time.
                     var dateComponents = DateComponents()
                     dateComponents.hour = Calendar.current.component(.hour, from: alarm.time)
@@ -54,7 +60,9 @@ class NotificationHelper : NSObject{
                     
                     UNUserNotificationCenter.current().delegate = self
                     UNUserNotificationCenter.current().add(request, withCompletionHandler: {error in
-                        print("Unable to add notification \(error)")
+                        if error != nil{
+                            print("Unable to add notification \(error)")
+                        }
                     })
                     
                 }
@@ -92,6 +100,23 @@ extension NotificationHelper : UNUserNotificationCenterDelegate{
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         print("did receive notification")
+        
+        guard let action = ActionType(rawValue: response.actionIdentifier) else {
+            completionHandler()
+            return
+        }
+        
+        switch action {
+        case .play:
+            if let episodeUrl = response.notification.request.content.userInfo["podcastUrl"] as? String,
+                let viewController = UIApplication.shared.keyWindow?.rootViewController,
+                let url = URL.init(string: episodeUrl){
+                print("Playiiiing \(episodeUrl)")
+                PlayerHelper.sharedHelper.streamFromUrl(url: url, viewController: viewController)
+            }
+        default: break
+        }
+        
         completionHandler()
     }
 }

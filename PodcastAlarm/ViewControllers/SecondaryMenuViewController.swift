@@ -41,6 +41,14 @@ extension SecondaryMenuViewController : UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "menuCell")
+        
+        if type == DataType.podcast,
+            let unwrappedAlarm = alarm as Alarm?{
+            let downloadCell = tableView.dequeueReusableCell(withIdentifier: "downloadCell") as? DownloadEpisodeTableViewCell
+            downloadCell?.setUpWithEpisode(episodeName: unwrappedAlarm.episodeName, url: unwrappedAlarm.episodeUrl)
+            return downloadCell ?? UITableViewCell()
+        }
+        
         cell?.textLabel?.text = DataHelper.valuesForType(type: type ?? DataType.frequency, index: indexPath.row, alarm: alarm)
         return cell ?? UITableViewCell()
     }

@@ -14,6 +14,7 @@ class EpisodeTableViewCell : UITableViewCell{
     @IBOutlet weak var episodeDescription: UILabel!
     @IBOutlet weak var duration: UILabel!
     @IBOutlet weak var publicationDate: UILabel!
+    @IBOutlet weak var isDownloadedLabel: UILabel!
     
     func setupCellWithEpisode(episode : Episode){
         title.text = episode.title.stringWithoutHtmlTags()
