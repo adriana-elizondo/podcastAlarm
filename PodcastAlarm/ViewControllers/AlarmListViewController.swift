@@ -26,6 +26,16 @@ class AlarmListViewController : UIViewController{
     private func fecthAlarmList(){
         alarmList = RealmHelper.fetchAlarms()
     }
+    
+    @IBAction func newAlarm(_ sender: Any) {
+        if let alarmController = self.storyboard?.instantiateViewController(withIdentifier: "AlarmViewController") as? AlarmViewController{
+            
+            let navigationController = UINavigationController.init(rootViewController: alarmController)
+            self.present(navigationController, animated: true, completion: nil)
+
+        }
+    }
+    
 }
 
 extension AlarmListViewController : UITableViewDataSource, UITableViewDelegate{

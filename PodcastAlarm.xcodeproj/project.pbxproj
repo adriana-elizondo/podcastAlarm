@@ -123,6 +123,7 @@
 		26C5C0691DE456BE00616614 /* Episode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Episode.swift; path = Models/Episode.swift; sourceTree = "<group>"; };
 		26C5C06B1DE45F8700616614 /* EpisodeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EpisodeTableViewCell.swift; path = TableViewCell/EpisodeTableViewCell.swift; sourceTree = "<group>"; };
 		26C5C06D1DE462B000616614 /* PodcastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PodcastViewController.swift; path = ViewControllers/PodcastViewController.swift; sourceTree = "<group>"; };
+		26CC141E1E07D139004968D2 /* sorry_alarm.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sorry_alarm.caf; sourceTree = "<group>"; };
 		26D68E761DE6CB3100045608 /* Alarm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alarm.swift; path = Models/Alarm.swift; sourceTree = "<group>"; };
 		26D68E781DE7E50D00045608 /* SecondaryMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SecondaryMenuViewController.swift; path = ViewControllers/SecondaryMenuViewController.swift; sourceTree = "<group>"; };
 		26D68E7A1DE7F0AF00045608 /* DataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataHelper.swift; path = Helpers/DataHelper.swift; sourceTree = "<group>"; };
@@ -182,6 +183,7 @@
 		262D30291DE03780002BFA50 /* PodcastAlarm */ = {
 			isa = PBXGroup;
 			children = (
+				26CC141B1E07CF12004968D2 /* Sounds */,
 				2631AEC91DE2DD270047C5B9 /* Frameworks */,
 				26D68E801DE99A7100045608 /* Extensions */,
 				2631AECD1DE2E24F0047C5B9 /* TableViewCell */,
@@ -266,6 +268,14 @@
 				264726691DED3C6E00FE075F /* Info.plist */,
 			);
 			path = PodcastAlarmExtension;
+			sourceTree = "<group>";
+		};
+		26CC141B1E07CF12004968D2 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				26CC141E1E07D139004968D2 /* sorry_alarm.caf */,
+			);
+			name = Sounds;
 			sourceTree = "<group>";
 		};
 		26D68E801DE99A7100045608 /* Extensions */ = {

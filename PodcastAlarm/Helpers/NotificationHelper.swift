@@ -44,12 +44,13 @@ class NotificationHelper : NSObject{
             if isAuthorized{
                 DispatchQueue.main.async {
                     let content = UNMutableNotificationContent()
-                    content.title = alarm.name
-                    content.subtitle = alarm.episodeName
+                    content.title = "Morning Sunshine!"
+                    content.subtitle = alarm.name
                     content.body = alarm.episodeName
-                    content.sound = UNNotificationSound.default()
+                    content.sound = UNNotificationSound.init(named: "sorry_alarm")
                     content.categoryIdentifier = "notificationExtensionId"
                     content.userInfo = ["podcastUrl" : alarm.episodeUrl]
+                    
                     // Deliver the notification in the alarm time.
                     var dateComponents = DateComponents()
                     dateComponents.hour = Calendar.current.component(.hour, from: alarm.time)

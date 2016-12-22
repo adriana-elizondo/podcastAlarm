@@ -12,6 +12,7 @@ import UIKit
 class SearchViewController : UIViewController{
     @IBOutlet fileprivate weak var tableView: UITableView!
     
+    var alarm : Alarm?
     fileprivate var searchResults = [Podcast]()
     fileprivate var selectedIndex = 0
     
@@ -36,6 +37,7 @@ class SearchViewController : UIViewController{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let podcastDetailController = segue.destination as? PodcastViewController{
             podcastDetailController.podcast = searchResults[selectedIndex]
+            podcastDetailController.alarm = alarm
         }
     }
 }

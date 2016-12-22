@@ -24,6 +24,8 @@ class PodcastViewController : UIViewController{
     
     //Variables
     var podcast = Podcast()
+    var alarm : Alarm?
+    
     fileprivate var podcastDetail : PodcastDetail?{
         didSet{
             guard podcastDetail != nil else {return}
@@ -45,6 +47,29 @@ class PodcastViewController : UIViewController{
         super.viewDidLoad()
         getDataFromServer()
     }
+    
+    fileprivate func createAlarmFromPodcast(episode: Episode){
+        var newAlarm = Alarm()
+        
+        if let currentAlarm = self.alarm as Alarm?{
+            newAlarm = currentAlarm
+        }else{
+            newAlarm.id = UUID().uuidString
+            newAlarm.name = self.podcastDetail?.title ?? ""
+            newAlarm.episodeUrl = episode.contentUrl
+            newAlarm.episodeName = episode.title
+        }
+        
+        if let alarmController = self.storyboard?.instantiateViewController(withIdentifier: "AlarmViewController") as? AlarmViewController{
+            alarmController.alarm = newAlarm
+            
+            let navigationController = UINavigationController.init(rootViewController: alarmController)
+            self.present(navigationController, animated: true){ _ in
+                self.tableView.setEditing(false, animated: true)
+            }
+        }
+        
+    }
 }
 
 extension PodcastViewController{
@@ -60,7 +85,6 @@ extension PodcastViewController{
     
     fileprivate func getDataFromServer(){
         NetworkHelper.getDataWithUrl(stringUrl: podcast.feedUrl, encoding: .XML){ (success, response, error) in
-            print("feef url \(self.podcast.feedUrl)")
             if success, let responseData = response as? Data{
                 DispatchQueue.main.async {
                     self.podcastDetail = PodcastDetail.init(xmlData: responseData)
@@ -97,26 +121,19 @@ extension PodcastViewController: UITableViewDataSource, UITableViewDelegate{
             tableView.endEditing(true)
         }
         
-        let createAlarmAction = UITableViewRowAction.init(style: .normal, title: "Create Alarm"){ (action, indexpath) in
-            let newAlarm = Alarm()
-            newAlarm.id = UUID().uuidString
-            newAlarm.episodeUrl = episode.contentUrl
-            newAlarm.episodeName = self.podcastDetail?.title ?? ""
-            
-            if let alarmController = self.storyboard?.instantiateViewController(withIdentifier: "AlarmViewController") as? AlarmViewController{
-                alarmController.alarm = newAlarm
-                
-                let navigationController = UINavigationController.init(rootViewController: alarmController)
-                self.present(navigationController, animated: true){ _ in
-                    tableView.setEditing(false, animated: true)
-                }
-            }
+        let createAlarmAction = UITableViewRowAction.init(style: .normal, title: "Select"){ (action, indexpath) in
+            self.createAlarmFromPodcast(episode: episode)
         }
         
         return [playAction, createAlarmAction]
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let episode = episodes[indexPath.row]
+        createAlarmFromPodcast(episode: episode)
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath){
         
     }
     

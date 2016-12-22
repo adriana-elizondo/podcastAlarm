@@ -38,10 +38,6 @@ class DownloadHelper : NSObject{
             urlSession.downloadTask(with: url).resume()
         }
     }
-    
-    func isEpisodeAvailableLocally(episodeUrl : String){
-        
-    }
 }
 
 extension DownloadHelper : URLSessionDelegate, URLSessionDownloadDelegate{

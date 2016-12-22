@@ -38,26 +38,4 @@ struct DataHelper{
             return alarm?.episodeName ?? "None"
         }
     }
-    
-    static func durationInMinutes(episode: Episode) -> String{
-        if let duration = episode.duration as String?{
-            if let intDuration = Int(duration){
-                let result = intDuration > 60 ? intDuration / 60 : intDuration
-                return String(result) + " minutes"
-            }
-            return String(duration)
-        }
-        
-        return "Not available"
-    }
-    
-    static func dateWithEpisode(episode : Episode) -> String{
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .full
-        
-        let date = dateFormatter.date(from: episode.publicationDate)
-        dateFormatter.dateStyle = .medium
-        
-        return dateFormatter.string(from: date ?? Date())
-    }
 }
