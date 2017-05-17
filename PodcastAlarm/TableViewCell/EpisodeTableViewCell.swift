@@ -18,7 +18,7 @@ class EpisodeTableViewCell : UITableViewCell{
     
     func setupCellWithEpisode(episode : Episode){
         title.text = episode.title.stringWithoutHtmlTags()
-        episodeDescription.text = episode.description.stringWithoutHtmlTags()
+        episodeDescription.text = episode.episodeDescription.stringWithoutHtmlTags()
         duration.text = episode.durationInMinutes()
         publicationDate.text = episode.formattedDate()
         isDownloadedLabel.isHidden = !episode.isEpisodeAvailableLocally()

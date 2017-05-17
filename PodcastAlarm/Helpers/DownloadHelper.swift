@@ -50,6 +50,7 @@ extension DownloadHelper : URLSessionDelegate, URLSessionDownloadDelegate{
             print("moved to \(pathToDirectory.appendingPathComponent(session.configuration.identifier!))")
         } catch {
             // ...Do something
+            print("couldnt move item \(error)")
         }
         
         if let appDelegate = UIApplication.shared.delegate as? AppDelegate,

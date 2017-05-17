@@ -17,7 +17,7 @@ enum ActionType: String {
     case stop = "Stop"
 }
 
-class NotificationHelper : NSObject{
+internal class NotificationHelper : NSObject{
     static let sharedInstance = NotificationHelper()
     
     public static var sharedHelper : NotificationHelper {
@@ -46,10 +46,10 @@ class NotificationHelper : NSObject{
                     let content = UNMutableNotificationContent()
                     content.title = "Morning Sunshine!"
                     content.subtitle = alarm.name
-                    content.body = alarm.episodeName
+                    content.body = alarm.episode?.title ?? ""
                     content.sound = UNNotificationSound.init(named: "sorry_alarm")
                     content.categoryIdentifier = "notificationExtensionId"
-                    content.userInfo = ["podcastUrl" : alarm.episodeUrl]
+                    content.userInfo = ["podcastUrl" : alarm.episode?.contentUrl ?? ""]
                     
                     // Deliver the notification in the alarm time.
                     var dateComponents = DateComponents()
@@ -62,11 +62,35 @@ class NotificationHelper : NSObject{
                     UNUserNotificationCenter.current().delegate = self
                     UNUserNotificationCenter.current().add(request, withCompletionHandler: {error in
                         if error != nil{
-                            print("Unable to add notification \(error)")
+                            print("Unable to add notification \(String(describing: error))")
+                        }else{
+                            print("Alarm was added")
                         }
                     })
                     
                 }
+            }
+        }
+    }
+    
+    static func requestAuthorization(){
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { (granted, error) in
+            if !granted{
+                let alert = UIAlertController.init(title: "Error", message: "You must allow notifications for the alarms to work! :)", preferredStyle: .alert)
+                let action = UIAlertAction(title: "Allow", style: UIAlertActionStyle.default, handler: { (action) in
+                    NotificationHelper.requestAuthorization()
+                })
+                
+                let cancel = UIAlertAction(title: "Don't Allow", style: UIAlertActionStyle.cancel, handler: { (action) in
+                    
+                })
+                
+                alert.addAction(action)
+                alert.addAction(cancel)
+                
+                UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
+            }else{
+                NotificationHelper.sharedHelper.setNotificationsCategory()
             }
         }
     }
@@ -102,6 +126,11 @@ extension NotificationHelper : UNUserNotificationCenterDelegate{
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         print("did receive notification")
         
+        if let stringUrl = response.notification.request.content.userInfo["podcastUrl"] as? String,
+            let url = URL(string: stringUrl){
+            PlayerHelper.sharedHelper.streamFromUrl(url: url)
+        }
+        
         guard let action = ActionType(rawValue: response.actionIdentifier) else {
             completionHandler()
             return
@@ -110,10 +139,9 @@ extension NotificationHelper : UNUserNotificationCenterDelegate{
         switch action {
         case .play:
             if let episodeUrl = response.notification.request.content.userInfo["podcastUrl"] as? String,
-                let viewController = UIApplication.shared.keyWindow?.rootViewController,
                 let url = URL.init(string: episodeUrl){
                 print("Playiiiing \(episodeUrl)")
-                PlayerHelper.sharedHelper.streamFromUrl(url: url, viewController: viewController)
+                PlayerHelper.sharedHelper.streamFromUrl(url: url)
             }
         default: break
         }

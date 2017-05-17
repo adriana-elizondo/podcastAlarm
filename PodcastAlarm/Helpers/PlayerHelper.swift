@@ -20,13 +20,13 @@ class PlayerHelper : NSObject{
     
     private var player = AVPlayer()
     
-    func streamFromUrl(url: URL, viewController: UIViewController){
+    func streamFromUrl(url: URL){
             player = AVPlayer.init(url: url)
         
             
             let playerViewController = AVPlayerViewController()
             playerViewController.player = player
-            viewController.present(playerViewController, animated: true) {
+            UIApplication.shared.keyWindow?.rootViewController?.present(playerViewController, animated: true) {
                 playerViewController.player!.play()
         }
     }

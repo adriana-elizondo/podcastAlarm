@@ -15,9 +15,9 @@ class DownloadEpisodeTableViewCell : UITableViewCell{
     
     var url = ""
     
-    func setUpWithEpisode(episodeName: String, url: String){
-        self.episodeName.text = episodeName
-        self.url = url
+    func setUpWithEpisode(episode: EpisodeObject){
+        self.episodeName.text = episode.title
+        self.url = episode.contentUrl
     }
     
     @IBAction func downloadEpisode(_ sender: Any) {

@@ -27,7 +27,12 @@ class AlarmViewController : UIViewController{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        initializeDefault()
+    }
+    
+    private func initializeDefault(){
+        guard alarm == nil else {return}
+        alarm = Alarm()
     }
     
     //ACTIONS
@@ -84,7 +89,7 @@ extension AlarmViewController{
         case 2:
             return("Sound", alarm?.soundName ?? "Default")
         case 3:
-            return("Snooze Podcast", alarm?.episodeName ?? "None")
+            return("Snooze Podcast", alarm?.episode?.title ?? "None")
             
         default:
             return nil

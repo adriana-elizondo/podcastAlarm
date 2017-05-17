@@ -15,10 +15,9 @@ class Alarm : Object{
     dynamic var name = "Alarm"
     dynamic var soundName = "Default"
     dynamic var soundPath = ""
-    dynamic var episode : Episode?
     dynamic var frequency = 0
     dynamic var status = false
-    
+    dynamic var episode : EpisodeObject?
     
     override static func primaryKey() -> String? {
         return "id"

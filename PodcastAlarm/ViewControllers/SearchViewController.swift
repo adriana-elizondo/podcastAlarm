@@ -49,7 +49,7 @@ extension SearchViewController : UISearchBarDelegate{
             if success, let results = (response as? [String: Any?])?["results"]{
                 self.searchResults = PodcastHelper.podcastArrayFromJSON(jsonArray: results as? [Any])
             }else{
-                print("Error \(error)")
+                print("Error \(String(describing: error))")
             }
             
             DispatchQueue.main.async {

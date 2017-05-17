@@ -17,14 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var completionHandlers = [String : () -> Void]()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { (granted, error) in
-            if !granted{
-                let alert = UIAlertController.init(title: "", message: "You must allow notifications for the app to work! :)", preferredStyle: .alert)
-                self.window?.rootViewController?.present(alert, animated: true, completion: nil)
-            }else{
-                NotificationHelper.sharedHelper.setNotificationsCategory()
-            }
-        }
+        NotificationHelper.requestAuthorization()
         return true
     }
 

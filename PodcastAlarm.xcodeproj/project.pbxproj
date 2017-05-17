@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		260BDD761DE6A8EB00259B7F /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260BDD751DE6A8EB00259B7F /* AlarmViewController.swift */; };
-		261B5C671DE196AC0010AB67 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261B5C661DE196AC0010AB67 /* Protocols.swift */; };
 		262D302B1DE03780002BFA50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262D302A1DE03780002BFA50 /* AppDelegate.swift */; };
 		262D30301DE03780002BFA50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 262D302E1DE03780002BFA50 /* Main.storyboard */; };
 		262D30321DE03780002BFA50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 262D30311DE03780002BFA50 /* Assets.xcassets */; };
@@ -39,6 +38,8 @@
 		264726681DED3C6E00FE075F /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 264726661DED3C6E00FE075F /* MainInterface.storyboard */; };
 		2647266C1DED3C6E00FE075F /* PodcastAlarmExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2647265E1DED3C6E00FE075F /* PodcastAlarmExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		26A2E1B11E0234F300ACF133 /* DownloadHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A2E1B01E0234F300ACF133 /* DownloadHelper.swift */; };
+		26B1A4591ECBF21500B225E9 /* Haneke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26B1A4581ECBF21500B225E9 /* Haneke.framework */; };
+		26B1A45A1ECBF21500B225E9 /* Haneke.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 26B1A4581ECBF21500B225E9 /* Haneke.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		26C5C06A1DE456BE00616614 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C5C0691DE456BE00616614 /* Episode.swift */; };
 		26C5C06C1DE45F8700616614 /* EpisodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C5C06B1DE45F8700616614 /* EpisodeTableViewCell.swift */; };
 		26C5C06E1DE462B000616614 /* PodcastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C5C06D1DE462B000616614 /* PodcastViewController.swift */; };
@@ -69,6 +70,7 @@
 			files = (
 				2631AECC1DE2DD720047C5B9 /* Realm.framework in Embed Frameworks */,
 				2631AEC21DE2DD1A0047C5B9 /* RealmSwift.framework in Embed Frameworks */,
+				26B1A45A1ECBF21500B225E9 /* Haneke.framework in Embed Frameworks */,
 				2631AEC01DE2DD1A0047C5B9 /* ObjectMapper.framework in Embed Frameworks */,
 				2631AEC41DE2DD1A0047C5B9 /* SWXMLHash.framework in Embed Frameworks */,
 				2631AED41DE2EF410047C5B9 /* Haneke.framework in Embed Frameworks */,
@@ -91,7 +93,6 @@
 
 /* Begin PBXFileReference section */
 		260BDD751DE6A8EB00259B7F /* AlarmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlarmViewController.swift; path = ViewControllers/AlarmViewController.swift; sourceTree = "<group>"; };
-		261B5C661DE196AC0010AB67 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Protocols.swift; path = Helpers/Protocols.swift; sourceTree = "<group>"; };
 		262D30271DE03780002BFA50 /* PodcastAlarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PodcastAlarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		262D302A1DE03780002BFA50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		262D302F1DE03780002BFA50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -120,6 +121,7 @@
 		264726671DED3C6E00FE075F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		264726691DED3C6E00FE075F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26A2E1B01E0234F300ACF133 /* DownloadHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DownloadHelper.swift; path = Helpers/DownloadHelper.swift; sourceTree = "<group>"; };
+		26B1A4581ECBF21500B225E9 /* Haneke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Haneke.framework; path = ../Carthage/Build/iOS/Haneke.framework; sourceTree = "<group>"; };
 		26C5C0691DE456BE00616614 /* Episode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Episode.swift; path = Models/Episode.swift; sourceTree = "<group>"; };
 		26C5C06B1DE45F8700616614 /* EpisodeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EpisodeTableViewCell.swift; path = TableViewCell/EpisodeTableViewCell.swift; sourceTree = "<group>"; };
 		26C5C06D1DE462B000616614 /* PodcastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PodcastViewController.swift; path = ViewControllers/PodcastViewController.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 			files = (
 				2631AECB1DE2DD720047C5B9 /* Realm.framework in Frameworks */,
 				2631AEC61DE2DD230047C5B9 /* ObjectMapper.framework in Frameworks */,
+				26B1A4591ECBF21500B225E9 /* Haneke.framework in Frameworks */,
 				2631AEC71DE2DD230047C5B9 /* RealmSwift.framework in Frameworks */,
 				2631AEC81DE2DD230047C5B9 /* SWXMLHash.framework in Frameworks */,
 				2631AED31DE2EF410047C5B9 /* Haneke.framework in Frameworks */,
@@ -218,7 +221,6 @@
 				262D30401DE072C0002BFA50 /* RealmHelper.swift */,
 				262D30421DE0767A002BFA50 /* PlayerHelper.swift */,
 				262D30441DE076FB002BFA50 /* NotificationHelper.swift */,
-				261B5C661DE196AC0010AB67 /* Protocols.swift */,
 				26D68E7A1DE7F0AF00045608 /* DataHelper.swift */,
 				26A2E1B01E0234F300ACF133 /* DownloadHelper.swift */,
 			);
@@ -240,6 +242,7 @@
 		2631AEC91DE2DD270047C5B9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				26B1A4581ECBF21500B225E9 /* Haneke.framework */,
 				2631AED21DE2EF410047C5B9 /* Haneke.framework */,
 				2631AECA1DE2DD720047C5B9 /* Realm.framework */,
 				2631AEBC1DE2DD1A0047C5B9 /* ObjectMapper.framework */,
@@ -441,7 +444,6 @@
 				2631AEBB1DE2D85A0047C5B9 /* SearchViewController.swift in Sources */,
 				2631AED11DE2E8980047C5B9 /* Podcast.swift in Sources */,
 				260BDD761DE6A8EB00259B7F /* AlarmViewController.swift in Sources */,
-				261B5C671DE196AC0010AB67 /* Protocols.swift in Sources */,
 				26A2E1B11E0234F300ACF133 /* DownloadHelper.swift in Sources */,
 				26D68E7B1DE7F0AF00045608 /* DataHelper.swift in Sources */,
 				262D30411DE072C0002BFA50 /* RealmHelper.swift in Sources */,

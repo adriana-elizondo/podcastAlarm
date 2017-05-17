@@ -56,8 +56,7 @@ class PodcastViewController : UIViewController{
         }else{
             newAlarm.id = UUID().uuidString
             newAlarm.name = self.podcastDetail?.title ?? ""
-            newAlarm.episodeUrl = episode.contentUrl
-            newAlarm.episodeName = episode.title
+            newAlarm.episode = episode.managedObject()
         }
         
         if let alarmController = self.storyboard?.instantiateViewController(withIdentifier: "AlarmViewController") as? AlarmViewController{
@@ -90,7 +89,7 @@ extension PodcastViewController{
                     self.podcastDetail = PodcastDetail.init(xmlData: responseData)
                 }
             }else{
-                print("Error \(error)")
+                print("Error \(String(describing: error))")
             }
         }
     }
@@ -116,7 +115,7 @@ extension PodcastViewController: UITableViewDataSource, UITableViewDelegate{
         let episode = episodes[indexPath.row]
         let playAction = UITableViewRowAction.init(style: .destructive, title: "Play") { (action, indexpath) in
             if let url = URL.init(string: episode.contentUrl){
-                PlayerHelper.sharedHelper.streamFromUrl(url: url, viewController: self)
+                PlayerHelper.sharedHelper.streamFromUrl(url: url)
             }
             tableView.endEditing(true)
         }

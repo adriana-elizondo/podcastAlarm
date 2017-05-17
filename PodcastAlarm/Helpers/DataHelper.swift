@@ -35,7 +35,7 @@ struct DataHelper{
         case .sound:
             return "Default"
         case .podcast:
-            return alarm?.episodeName ?? "None"
+            return alarm?.episode?.title ?? "None"
         }
     }
 }
